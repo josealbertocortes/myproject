@@ -1,0 +1,137 @@
+/* src/styles/custom.scss - Asegurando el Lujo */
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+// 2. Define tus variables de lujo
+$primary: #C39B42;           // 🌟 Color Oro (el acento)
+$secondary: #4B4B4B;         // Gris Carbón sofisticado para texto secundario
+$dark: #0A0A0A;              // Negro Profundo para el Header
+$light: #FBFBF9;             // Blanco Roto / Crema suave para el Hero
+
+// ... (otros settings)
+
+// 4. Importa el resto de Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+/* --- Estilos personalizados para el toque exclusivo --- */
+
+// Asegura que los encabezados usen la fuente Serif elegante
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; 
+    font-weight: 300; // Peso ligero para un look más refinado
+    color: $dark;
+}
+
+// Estilo especial para el botón dorado (el fondo del botón es crucial)
+.btn-gold {
+    // Usamos un degradado para el look "metálico" del botón
+    background: linear-gradient(180deg, lighten($primary, 10%) 0%, $primary 100%); 
+    border: 1px solid darken($primary, 5%);
+    color: $dark !important; // El texto debe ser oscuro para contraste
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); // Sombra sutil
+    border-radius: 0;
+    padding: 1rem 3rem;
+
+    &:hover {
+        background: linear-gradient(180deg, $primary 0%, darken($primary, 5%) 100%);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+// Efecto sutil al pasar el mouse por las tarjetas de servicio
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+        transform: translateY(-5px); // Se eleva ligeramente
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.08) !important; // Sombra suave difusa
+    }
+}
+
+/* Asegura que el texto secundario en fondo oscuro sea legible pero sutil */
+.bg-dark .text-secondary {
+    color: #a0a0a0 !important; /* Gris claro suave */
+}
+
+/* Tipografía de Lujo */
+.font-serif {
+    font-family: 'Playfair Display', serif; /* Asegúrate de importar esta fuente en index.html */
+}
+
+/* Botón Dorado Mejorado */
+.btn-gold {
+    background: linear-gradient(45deg, #C39B42, #D4AF37);
+    color: #000;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(195, 155, 66, 0.3);
+}
+
+/* Efecto Hover en Tarjetas de Proyecto */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Efecto Zoom en Imagen */
+.project-card .card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.05); /* Zoom sutil */
+}
+
+/* Tipografía Serif */
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Inputs minimalistas (Solo borde inferior) */
+.form-control, .form-select {
+    border-bottom: 1px solid #e0e0e0 !important;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-bottom: 1px solid #C39B42 !important; /* Dorado al escribir */
+    background-color: transparent;
+}
+
+/* Placeholder color */
+::placeholder {
+    color: #bdbdbd !important;
+    opacity: 1;
+}
+
+/* Botón Dorado (Reutilizable) */
+.btn-gold {
+    background-color: #C39B42;
+    color: #000;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #b08d3b; /* Un poco más oscuro al pasar el mouse */
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(195, 155, 66, 0.4);
+}
+
